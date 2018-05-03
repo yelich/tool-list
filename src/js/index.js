@@ -20,22 +20,20 @@ function Home(){
 function ToDoList(){
     return (
         <div className="container">
-            <div className="row align-items-start">
-                <div className="row align-items-center">
-                    
-                    <div className="col">
-                        <h2 className="todos">Todos</h2>
-                        <ul className="list-group">
-                            <li className="list-group-item">What needs to be done?</li>
-                            <li className="list-group-item">Make the bed</li>
-                            <li className="list-group-item">Walk the dog</li>
-                            <li className="list-group-item">sfdsdf</li>
-                        </ul>
-                    </div>
-                   
+            <div className="row align-items-center">
+                <div className="col">
+                    <h2 className="todos">Todos</h2>
+                    <ul className="list-group">
+                        <li className="list-group-item">What needs to be done?</li>
+                        <li className="list-group-item">Make the bed</li>
+                        <li className="list-group-item">Walk the dog</li>
+                        <li className="list-group-item">sfdsdf</li>
+                    </ul>
                 </div>
+                   
             </div>
         </div>
+
         );
 }
 
