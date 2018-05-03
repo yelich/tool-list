@@ -24,7 +24,10 @@ function ToDoList(){
                 <div className="col">
                     <h2 className="todos">Todos</h2>
                     <ul className="list-group">
-                        <li className="list-group-item">What needs to be done?</li>
+                        <form>
+                            <input type="text" className="form-control" id="formGroupExampleInput2" placeholder="What needs to be done?"></input>
+                        </form>
+    
                         <li className="list-group-item">Make the bed</li>
                         <li className="list-group-item">Walk the dog</li>
                         <li className="list-group-item">sfdsdf</li>
