@@ -9,10 +9,30 @@ import 'bootstrap';
 import '../styles/index.scss';
 
 //import your own components
-import {Home} from './component/home.jsx';
 
-//render your react application
+
+
+function Home(){
+    
+    return (<h1>todos</h1>);
+}
+
+function ToDoList(){
+    return (
+        <div className= "container">
+            <h2 className="todos">Todos</h2>
+            <ul className="list-group">
+                <li className="list-group-item">What needs to be done?</li>
+                <li className="list-group-item">Make the bed</li>
+                <li className="list-group-item">Walk the dog</li>
+                <li className="list-group-item">sfdsdf</li>
+            </ul>
+        </div>);
+}
+
+
+
 ReactDOM.render(
-    <Home />,
+    <ToDoList />,
     document.querySelector('#app')
 );

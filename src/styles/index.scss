@@ -1,6 +1,12 @@
 @import '~bootstrap/scss/bootstrap.scss';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
 
-
+.todos {
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: violet;
+    text-align: center;
+    font-size: 80px;
+}
 /* 
 
     You can write your own styles here...
