@@ -1,5 +1,5 @@
 import React from 'react';
-import {Element} from './element.jsx';
+// import {Element} from './element.jsx';
 //include images into your bundle
 import rigoImage from '../../img/rigo-baby.jpg';
 
@@ -7,38 +7,54 @@ import rigoImage from '../../img/rigo-baby.jpg';
 export class Home extends React.Component{
     
 
-constructor(){
-    super();
-    this.state={
-        "tasks": [
-            "wash the car",
-            "walk the dog",
-            "go to gym",
-            "go to the bank",
-            "buy stamps",
-            "pay bills" ]
-};
+    constructor(){
+        super();
+        this.state = {
+            tasks: [
+                "wash the car",
+                "walk the dog",
+                "go to gym",
+                "go to the bank",
+                "buy stamps",
+                "pay bills" 
+            ]
+        };
     
-}
+    }
 
 
-handleClickNewTask(e){
+    handleClickNewTask(e){
     
 
-if (e.charCode == 13) {
-  let tempState = this.state;
-  tempState.tasks.push(e.target.value);
-  this.setState(tempState);  
-  e.target.value ="";
-  
-}
-}
+        if (e.charCode == 13) {
+            let newArray = this.state.tasks.concat([e.target.value]);
+            this.setState({
+                tasks: newArray
+            });  
+        }
+    }
 
-render(){
+    removeTask(t){
+        let newArray = this.state.tasks.filter(function(task){
+            if (t !== task) return true;
+            else return false;
+        });
+        
+        this.setState({
+            tasks: newArray
+        });
+        
+
+    }
+
+    render(){
 
       
         var listTasks = this.state.tasks.map( (element, index) => {
-            return <Element key={index} taskTitle={element}/>;
+            return <li key={index} className="list-group-item"> 
+                {element}
+                <span className="remover"  onClick={(e) => this.removeTask(element)}>X</span>
+            </li>;
         });
 
 
@@ -52,9 +68,7 @@ render(){
                         <li className="addTask">
                             <input type="text" className="addtolist" onKeyPress={(event) => this.handleClickNewTask(event)} id="formGroupExampleInput2" placeholder="What needs to be done?"></input>
                         </li>
-                        <li className="list-group-item">Make the bed</li>
-                        <li className="list-group-item">Walk the dog</li>
-                        <li className="list-group-item">paint the bathroom</li>
+                        <li className="list-group-item">Make the bed (for example)</li>
                         {listTasks}
                         
                     
